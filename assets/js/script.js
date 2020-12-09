@@ -1,4 +1,6 @@
 /* Declare Variables */
+var generateBtn = document.querySelector("#playQuiz");
+
 const quizData = [
     q1 = {
         q: "What color is the sky?",
@@ -19,7 +21,7 @@ function playQuiz() {
     var userAns = "";
 
     for (var i = 0; i < quizData.length; i++) {
-        userAns = prompt(quizData[i]);
+        userAns = prompt(quizData[i].q);
         switch (i) {
             case 0:
                 if (userAns === "Blue" || userAns === "blue") {
@@ -54,3 +56,6 @@ function playQuiz() {
         }
     }
 }
+
+// Add event listener to generate button
+generateBtn.addEventListener("click", playQuiz);

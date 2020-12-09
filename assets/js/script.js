@@ -17,7 +17,7 @@ const quizData = [
 ];
 
 function playQuiz() {
-    var userScore = [0, 0, 0];
+    var userScore = [0, 0];
     var userAns = "";
 
     for (var i = 0; i < quizData.length; i++) {
@@ -29,6 +29,7 @@ function playQuiz() {
                     userScore[0]++;
                 } else {
                     alert("That is incorrect\nYou lose 5 seconds.");
+                    userScore[1]++;
                     //TO DO: decreaseClock();
                 }
                 break;
@@ -38,6 +39,7 @@ function playQuiz() {
                     userScore[0]++;
                 } else {
                     alert("That is incorrect\nYou lose 5 seconds.");
+                    userScore[1]++;
                     //TO DO: decreaseClock();
                 }
                 break;
@@ -47,6 +49,7 @@ function playQuiz() {
                     userScore[0]++;
                 } else {
                     alert("That is incorrect\nYou lose 5 seconds.");
+                    userScore[1]++;
                     //TO DO: decreaseClock();
                 }
                 break;
@@ -55,6 +58,8 @@ function playQuiz() {
                 break;
         }
     }
+
+    alert("Final Score:\nYou got " + userScore[0] + " correct and " + userScore[1] + " incorrect.");
 }
 
 // Add event listener to generate button

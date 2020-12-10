@@ -1,32 +1,33 @@
 .answerGroup {
-    width: 1000px;
+    width: 440px;
     height: 150px;
     border-width: 5px;
 }
 
 #playQuiz {
     margin-top: 75px;
-    height: 100px;
+    height: 200px;
 }
 
 #questionBox {
     display: none;
     margin-top: 75px;
-    height: 100px;
+    height: 200px;
 }
 
 #title {
+    font-size: 50px;
+    font-weight: bold;
     margin-top: 5%;
 }
 
 @media only screen and (max-width: 768px) {
     .answerGroup {
-        width: 500px;
+        width: 240px;
+        height: 250px;
     }
 
     #title {
-        font-size: 50px;
-        font-weight: bold;
         margin-top: 10%;
     }    
 }
@@ -34,11 +35,10 @@
 @media only screen and (max-width: 400px) {
     .answerGroup {
         width: 125px;
+        height: 125px;
     }
 
     #title {
-        font-size: 50px;
-        font-weight: bold;
         margin-top: 15%;
     }    
 }

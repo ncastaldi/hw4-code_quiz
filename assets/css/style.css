@@ -7,6 +7,7 @@
 #playQuiz {
     margin-top: 75px;
     height: 200px;
+    width: -webkit-fill-available;
 }
 
 #questionBox {

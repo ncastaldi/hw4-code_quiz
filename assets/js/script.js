@@ -22,19 +22,13 @@ function playQuiz() {
     var userAnswer = "";
 
     // Loop over length of quizData array
-    for (var i = 0; i < quizData.length; i++) {
-        // Show Question in textbox
-        document.getElementById("questionBox").value = quizData[i].question;
-        do {
-            //SOMETHING?
-        } while (userAnswer != null);
-    }
+    // TO DO: Create timer interval
 }
 
 document.getElementById("questionBox").value = "Game Over";
 
     // Switch on answer button response
-  }
+
 
 
 // Add event listener to generate button

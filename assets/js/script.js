@@ -17,6 +17,13 @@ const quizData = [
 ];
 
 function playQuiz() {
+    // Hide "Take Quiz" Button
+    document.getElementById("playQuiz").style.display = "none";
+
+
+    // Show Question text
+    // TODO
+
     var userScore = [0, 0];
     var userAns = "";
 

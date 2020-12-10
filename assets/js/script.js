@@ -1,69 +1,42 @@
 /* Declare Variables */
 var generateBtn = document.querySelector("#playQuiz");
 
-const quizData = [
-    q1 = {
-        q: "What color is the sky?",
-        a: "Blue"
-    },
-    q2 = {
-        q: "What color is the grass?",
-        a: "Green"
-    },
-    q3 = {
-        q: "What is the capitol of Georgia?",
-        a: "Atlanta"
-    }
+var quizData = [
+  { question: "What color is the sky?", answer: "Blue" },
+  { question: "What color is the grass?", answer: "Green" },
+  { question: "What is the capitol of Georgia?", answer: "Atlanta" },
 ];
 
+console.log(quizData[2].question); //Validating syntax
+
 function playQuiz() {
-    // Hide "Take Quiz" Button
-    document.getElementById("playQuiz").style.display = "none";
+  // Hide "Take Quiz" Button
+  document.getElementById("playQuiz").style.display = "none";
 
+  // Show Question text
+  document.getElementById("questionBox").style.display = "flex";
 
-    // Show Question text
-    document.getElementById("questionBox").style.display = "flex";
+  // Declare Variables
+  var userScore = [0, 0];
+  var gameTimer = 100;
 
-    var userScore = [0, 0];
-    var userAns = "";
+  // Loop over length of quizData array
+  for (var i = 0; i < quizData.length; i++) {
+    // Show Question in textbox
+    
 
-/*     for (var i = 0; i < quizData.length; i++) {
-        userAns = prompt(quizData[i].q);
-        switch (i) {
-            case 0:
-                if (userAns === "Blue" || userAns === "blue") {
-                    alert("That is correct");
-                    userScore[0]++;
-                } else {
-                    alert("That is incorrect\nYou lose 5 seconds.");
-                    userScore[1]++;
-                    //TO DO: decreaseClock();
-                }
-                break;
-            case 1:
-                if (userAns === "Green" || userAns === "green") {
-                    alert("That is correct");
-                    userScore[0]++;
-                } else {
-                    alert("That is incorrect\nYou lose 5 seconds.");
-                    userScore[1]++;
-                    //TO DO: decreaseClock();
-                }
-                break;
-            case 2:
-                if (userAns === "Atlanta" || userAns === "atlanta") {
-                    alert("That is correct");
-                    userScore[0]++;
-                } else {
-                    alert("That is incorrect\nYou lose 5 seconds.");
-                    userScore[1]++;
-                    //TO DO: decreaseClock();
-                }
-                break;
-        }
-    } */
+    for (var j = 0; j < 5; j++) {
+        document.getElementById("questionBox").value = quizData[i].question;
+      for (var k = 0; k < 2; k++) {
+        console.log(j);
+        console.log(k);
+        
+      }
+    }
+    document.getElementById("questionBox").value = "Game Over";
 
- //   alert("Final Score:\nYou got " + userScore[0] + " correct and " + userScore[1] + " incorrect.");
+    // Switch on answer button response
+  }
 }
 
 // Add event listener to generate button

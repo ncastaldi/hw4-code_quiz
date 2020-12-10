@@ -53,9 +53,6 @@ function playQuiz() {
                     //TO DO: decreaseClock();
                 }
                 break;
-             default:
-                alert("You shouldn't see this!");
-                break;
         }
     }
 

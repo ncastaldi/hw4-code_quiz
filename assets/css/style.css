@@ -1,3 +1,12 @@
+#playQuiz {
+    margin-top: 75px;
+    height: 100px;
+}
+
+#title {
+    margin-top: 15%;
+}
+
 @media only screen and (max-width: 768px) {
     #title {
         font-size: 50px;

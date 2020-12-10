@@ -1,3 +1,9 @@
+.answerGroup {
+    width: 125px;
+    height: 150px;
+    border-width: 5px;
+}
+
 #playQuiz {
     margin-top: 75px;
     height: 100px;

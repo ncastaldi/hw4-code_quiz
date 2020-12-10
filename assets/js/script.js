@@ -22,12 +22,12 @@ function playQuiz() {
 
 
     // Show Question text
-    // TODO
+    document.getElementById("questionBox").style.display = "flex";
 
     var userScore = [0, 0];
     var userAns = "";
 
-    for (var i = 0; i < quizData.length; i++) {
+/*     for (var i = 0; i < quizData.length; i++) {
         userAns = prompt(quizData[i].q);
         switch (i) {
             case 0:
@@ -61,9 +61,9 @@ function playQuiz() {
                 }
                 break;
         }
-    }
+    } */
 
-    alert("Final Score:\nYou got " + userScore[0] + " correct and " + userScore[1] + " incorrect.");
+ //   alert("Final Score:\nYou got " + userScore[0] + " correct and " + userScore[1] + " incorrect.");
 }
 
 // Add event listener to generate button

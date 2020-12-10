@@ -3,6 +3,10 @@
     height: 100px;
 }
 
+#questionBox {
+    display: none;
+}
+
 #title {
     margin-top: 15%;
 }

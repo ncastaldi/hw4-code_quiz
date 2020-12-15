@@ -61,10 +61,15 @@ function displayQuestion() {
     // Iterate over Question and Answer Arrays
     quizQuestionBox.textContent = quizData[questionIndex].question;
     for (var i = 0; i < 4; i++) {
+
+        var answerList = document.createElement("ul");
+
         var answerBtn = document.createElement("button");
         answerBtn.textContent = quizData[questionIndex].choices[i];
         answerBtn.setAttribute("data-id", i);
-        quizAnswerBox.appendChild(answerBtn);
+        answerList.appendChild(answerBtn);
+
+        quizAnswerBox.appendChild(answerList);
 
         // Listen for answer button click
         answerBtn.addEventListener("click", function () {

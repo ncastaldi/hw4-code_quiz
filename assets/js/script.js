@@ -85,7 +85,7 @@ function displayQuestion() {
                     displayQuestion();
                 }
             } else {
-                secondsElapsed += 5;
+                secondsElapsed += 10;
                 questionIndex++;
                 quizAnswerBox.textContent = "";
                 if (questionIndex == quizData.length) {

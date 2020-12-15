@@ -60,15 +60,27 @@ function displayQuestion() {
                 // notify correct
                 questionIndex++;
                 quizAnswerBox.textContent = "";
-                displayQuestion();
+                if (questionIndex == quizData.length) {
+                    endGame();
+                } else {
+                    displayQuestion();
+                }
             } else {
                 // subtract time from timer
                 questionIndex++;
                 quizAnswerBox.textContent = "";
-                displayQuestion();
+                if (questionIndex == quizData.length) {
+                    endGame();
+                } else {
+                    displayQuestion();
+                }
             }
         })
     }
+}
+
+function endGame() {
+    console.log("game over");
 }
 
 /* Register Event Listeners */

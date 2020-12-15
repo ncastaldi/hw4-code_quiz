@@ -1,4 +1,5 @@
 /* Declare DOM Variables */
+var highScoreBox = document.getElementById("highScoreLink");
 var timerBox = document.getElementById("gameTimer");
 var title = document.getElementById("title");
 var welcomeMsg = document.getElementById("welcomeMsg");
@@ -115,6 +116,20 @@ function endGame() {
     welcomeMsg.textContent = "Game Over";
     welcomeMsg.setAttribute("text-align", "center");
     welcomeMsg.setAttribute("class", "show");
+
+    /* Create Form to Capture User's Initials */
+    var captureInitialsLabel = document.createElement("p");
+    captureInitialsLabel.innerHTML = "Enter Your Initials";
+    quizAnswerBox.appendChild(captureInitialsLabel);
+    var captureInitalsBox = document.createElement("input");
+    captureInitalsBox.setAttribute("type", "text");
+    quizAnswerBox.appendChild(captureInitalsBox);
+    var submitInitialsBtn = document.createElement("button");
+    submitInitialsBtn.setAttribute("type", "Submit");
+    captureInitalsBox.appendChild(submitInitialsBtn);
+
+    /* Store Initials and Score to Local Storage */
+    localStorage.setItem("High Score", JSON.stringify(todos));
 }
 
 function startTimer() {
@@ -128,5 +143,14 @@ function startTimer() {
     }, 1000);
 }
 
+function showHighScores() {
+    //Hide everything on the page
+    //Pull scores from local storage
+    //Create heading: HIGH SCORES
+    //Create UL of scores
+    alert("Feature In Development");
+}
+
 /* Register Event Listeners */
 playQuizBtn.addEventListener("click", playQuiz);
+highScoreBox.addEventListener("click", showHighScores);

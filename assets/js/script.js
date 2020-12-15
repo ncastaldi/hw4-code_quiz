@@ -1,60 +1,68 @@
-/* Declare Variables */
-var generateBtn = document.querySelector("#playQuiz");
+/* Declare DOM Variables */
+var startPage = document.getElementById("startPage");
+var playQuizBtn = document.getElementById("playQuiz");
+var quizQuestionBox = document.getElementById("quizQuestions")
+var quizAnswerBox = document.getElementById("quizAnswers");
+
+
+/* Declare Javascript Variables */
+var questionIndex = 0;
 
 const quizData = [
     {
-        question: "Who invented JavaScript?",
-        answers: {
-            a: "Douglas Crockford",
-            b: "Sheryl Sandberg",
-            c: "Brendan Eich",
-            d: "Johnathan Watson"
-        },
-        correctAnswer: "c"
+        question: "Commonly used data type Do Not include:---",
+        choices: ["strings", "booleance", "alerts", "numbers"],
+        answer: "alerts"
     },
     {
-        question: "What do we do with arrays?",
-        answers: {
-            a: "Iterate over them",
-            b: "Ignore them",
-            c: "Stringify them"
-            d: "Console log them"
-        },
-        correctAnswer: "a"
+        question: "The condition in an if/else statement is enclosed within:---",
+        choices: ["quotes", "Curly brackets", "parentheses", "square brackets"],
+        answer: "parentheses"
     },
     {
-        question: "Inside which HTML element do we put the JavaScript??",
-        answers: {
-            a: "<scripting>",
-            b: "<script>",
-            c: "<javascript>",
-            d: "<js>"
-        },
-        correctAnswer: "b"
-    }
-];
+        question: "Arrays in JavaScript can be used to store:---",
+        choices: ["numbers and strings", "others Arrays", "booleances", "all of the above"],
+        answer: "all of the above"
+    },
+    {
+        question: "String values must be enclosed within --- when being assigned to variables ",
+        choices: ["commas", "curly brackets", "quotes", "parentheses"],
+        answer: "quotes"
+    },
+    {
+        question: "A very useful tool used during development and debugging for printing content to the debugger is:---",
+        choices: ["JavaScript", "terminal/bash", "alerts", "console.log"],
+        answer: "console.log"
+    },
+]
 
-console.log(quizData[2].question); //Validating syntax
-
+/* Define functions */
 function playQuiz() {
-    // Hide "Take Quiz" Button
-    document.getElementById("playQuiz").style.display = "none";
+    //TEST
+    console.log(quizData[1].choices[0]);
+    //TEST
 
-    // Show Question text
-    document.getElementById("questionBox").style.display = "flex";
+    // Hide  Welcome Message and "Take Quiz" Button
+    startPage.setAttribute("class", "hide");
 
-    // Declare Variables
-    var userScore = [0, 0]; // TODO: Replace with local storage
-    var gameTimer = 100; //TODO: Replace with SetInterval function
-    var userAnswer = "";
+    // Show Question Box and Answer Buttons
+    quizQuestionBox.setAttribute("class", "show");
+    quizAnswerBox.setAttribute("class", "show");
 
+    // Iterate over Question and Answer Arrays
+    quizQuestionBox.textContent = quizData[questionIndex].question;
+    for (var i = 0; i < 4; i++) {
+        var answerBtn = document.createElement("button");
+        answerBtn.textContent = quizData[questionIndex].choices[i];
+        answerBtn.setAttribute("style", "btn btn-success");
+        quizAnswerBox.appendChild(answerBtn);
+    }
 }
 
-document.getElementById("questionBox").value = "Game Over";
+function nextQuestion(){
+    console.log("working?");
+}
 
-// Switch on answer button response --> Eventlistener on button group
-
-
-
-// Add event listener to generate button
-generateBtn.addEventListener("click", playQuiz);
+/* Register Event Listeners */
+playQuizBtn.addEventListener("click", playQuiz);
+quizAnswerBox.addEventListener("click", nextQuestion);

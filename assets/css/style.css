@@ -4,10 +4,18 @@
     border-width: 5px;
 }
 
+.hide {
+    display: none;
+}
+
+.show {
+    display: inline-block;
+}
+
 #playQuiz {
     margin-top: 75px;
     height: 200px;
-    width: -webkit-fill-available;
+   width: -webkit-fill-available; 
 }
 
 #questionBox {

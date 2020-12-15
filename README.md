@@ -26,11 +26,11 @@ Installation requires uploading the application files and folders to root of web
 
 GitHub Repository: [https://github.com/ncastaldi/hw4-code_quiz](https://github.com/ncastaldi/hw4-code_quiz)
 
-**INSERT SCREENSHOT**
+![Repo Screenshot](./assets/images/reposcreenshot.png)
 
 Live Site: [https://www.castaldi.dev/hw4-code_quiz/index.html](https://www.castaldi.dev/hw4-code_quiz/index.html)
 
-**INSERT SCREENSHOT**
+![Site Screenshot](./assets/images/sitescreenshot.png)
 
 
 ## License

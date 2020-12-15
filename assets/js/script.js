@@ -8,7 +8,7 @@ var quizMsgBox = document.getElementById("quizMessages");
 
 /* Declare Javascript Variables */
 var questionIndex = 0;
-var totalSeconds = 90;
+var totalSeconds = 60;
 var secondsElapsed = 0;
 var interval;
 
@@ -52,7 +52,7 @@ function playQuiz() {
 
     // Start Timer
     startTimer();
-    
+
     // Show First Question
     displayQuestion();
 }
@@ -65,9 +65,10 @@ function displayQuestion() {
         answerBtn.textContent = quizData[questionIndex].choices[i];
         answerBtn.setAttribute("data-id", i);
         quizAnswerBox.appendChild(answerBtn);
+
+        // Listen for answer button click
         answerBtn.addEventListener("click", function () {
             if (this.textContent === quizData[questionIndex].answer) {
-                // notify correct
                 questionIndex++;
                 quizAnswerBox.textContent = "";
                 if (questionIndex == quizData.length) {
@@ -77,7 +78,7 @@ function displayQuestion() {
                     displayQuestion();
                 }
             } else {
-                // subtract time from timer
+                secondsElapsed += 5;
                 questionIndex++;
                 quizAnswerBox.textContent = "";
                 if (questionIndex == quizData.length) {
@@ -92,6 +93,9 @@ function displayQuestion() {
 }
 
 function endGame() {
+    /* End timer */
+    clearInterval(interval);
+
     /* Clear questions and answers from screen */
     quizQuestionBox.textContent = "";
     quizAnswerBox.textContent = "";
@@ -101,18 +105,11 @@ function endGame() {
     welcomeMsg.textContent = "Game Over"
     welcomeMsg.setAttribute("text-align", "center");
     welcomeMsg.setAttribute("class", "show");
-
-
 }
 
 function startTimer() {
-    clearInterval(interval);
-
     interval = setInterval(function () {
-        console.log(totalSeconds - secondsElapsed);
-
-        timerBox.textContent = parseInt((totalSeconds - secondsElapsed) % 60);
-
+        timerBox.textContent = "Time Remaining: " + parseInt(totalSeconds - secondsElapsed);
         secondsElapsed++;
         if (totalSeconds === secondsElapsed) {
             clearInterval(interval);

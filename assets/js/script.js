@@ -3,6 +3,7 @@ var welcomeMsg = document.getElementById("welcomeMsg");
 var playQuizBtn = document.getElementById("playQuiz");
 var quizQuestionBox = document.getElementById("quizQuestions")
 var quizAnswerBox = document.getElementById("quizAnswers");
+var quizMsgBox = document.getElementById("quizMessages");
 
 /* Declare Javascript Variables */
 var questionIndex = 0;
@@ -39,6 +40,7 @@ const quizData = [
 function playQuiz() {
     // Hide  Welcome Message and "Take Quiz" Button
     welcomeMsg.setAttribute("class", "hide");
+    playQuizBtn.setAttribute("class", "hide");
 
     // Show Question Box and Answer Buttons
     quizQuestionBox.setAttribute("class", "show");
@@ -63,6 +65,7 @@ function displayQuestion() {
                 if (questionIndex == quizData.length) {
                     endGame();
                 } else {
+                    quizMsgBox.textContent = "That was correct!";
                     displayQuestion();
                 }
             } else {
@@ -72,6 +75,7 @@ function displayQuestion() {
                 if (questionIndex == quizData.length) {
                     endGame();
                 } else {
+                    quizMsgBox.textContent = "That was incorrect! You lose 5 seconds.";
                     displayQuestion();
                 }
             }
@@ -83,6 +87,12 @@ function endGame() {
     /* Clear questions and answers from screen */
     quizQuestionBox.textContent = "";
     quizAnswerBox.textContent = "";
+    quizMsgBox.textContent = "";
+
+    /* Show Game Over Message */
+    welcomeMsg.textContent = "Game Over"
+    welcomeMsg.setAttribute("class", "show");
+
     
 }
 

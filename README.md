@@ -59,4 +59,4 @@ SOFTWARE.
 
 ## Badges
 
-[TBD]
+[![GitHub license](https://img.shields.io/github/license/ncastaldi/hw4-code_quiz?style=for-the-badge)](https://github.com/ncastaldi/hw4-code_quiz/blob/main/license.txt)

@@ -1,4 +1,5 @@
 /* Declare DOM Variables */
+var timerBox = document.getElementById("gameTimer");
 var welcomeMsg = document.getElementById("welcomeMsg");
 var playQuizBtn = document.getElementById("playQuiz");
 var quizQuestionBox = document.getElementById("quizQuestions")
@@ -7,6 +8,9 @@ var quizMsgBox = document.getElementById("quizMessages");
 
 /* Declare Javascript Variables */
 var questionIndex = 0;
+var totalSeconds = 90;
+var secondsElapsed = 0;
+var interval;
 
 const quizData = [
     {
@@ -46,6 +50,10 @@ function playQuiz() {
     quizQuestionBox.setAttribute("class", "show");
     quizAnswerBox.setAttribute("class", "show");
 
+    // Start Timer
+    startTimer();
+    
+    // Show First Question
     displayQuestion();
 }
 
@@ -94,7 +102,23 @@ function endGame() {
     welcomeMsg.setAttribute("text-align", "center");
     welcomeMsg.setAttribute("class", "show");
 
-    
+
+}
+
+function startTimer() {
+    clearInterval(interval);
+
+    interval = setInterval(function () {
+        console.log(totalSeconds - secondsElapsed);
+
+        timerBox.textContent = parseInt((totalSeconds - secondsElapsed) % 60);
+
+        secondsElapsed++;
+        if (totalSeconds === secondsElapsed) {
+            clearInterval(interval);
+            endGame();
+        }
+    }, 1000);
 }
 
 /* Register Event Listeners */

@@ -6,7 +6,6 @@
     display: inline-block;
 }
 
-
 @media only screen and (max-width: 768px) {
     .answerGroup {
         width: 240px;

@@ -91,6 +91,7 @@ function endGame() {
 
     /* Show Game Over Message */
     welcomeMsg.textContent = "Game Over"
+    welcomeMsg.setAttribute("text-align", "center");
     welcomeMsg.setAttribute("class", "show");
 
     

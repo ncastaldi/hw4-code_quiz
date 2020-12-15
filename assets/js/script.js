@@ -67,6 +67,7 @@ function displayQuestion() {
         var answerBtn = document.createElement("button");
         answerBtn.textContent = quizData[questionIndex].choices[i];
         answerBtn.setAttribute("data-id", i);
+        answerBtn.setAttribute("class", "btn btn-primary");
         answerList.appendChild(answerBtn);
 
         quizAnswerBox.appendChild(answerList);

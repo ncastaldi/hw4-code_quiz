@@ -60,8 +60,3 @@ SOFTWARE.
 ## Badges
 
 [TBD]
-
-
-## Features
-
-[TBD]

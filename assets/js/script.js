@@ -117,19 +117,25 @@ function endGame() {
     welcomeMsg.setAttribute("text-align", "center");
     welcomeMsg.setAttribute("class", "show");
 
-    /* Create Form to Capture User's Initials */
+    /* Display Final Score */
+    var finalScore = parseInt(totalSeconds - secondsElapsed);
+    var finalScoreDisplay = document.createElement("p");
+    finalScoreDisplay.innerHTML = "You scored: " + finalScore;
+    quizAnswerBox.appendChild(finalScoreDisplay);
+
+    /* Capture User's Initals */
     var captureInitialsLabel = document.createElement("p");
-    captureInitialsLabel.innerHTML = "Enter Your Initials";
+    captureInitialsLabel.innerHTML = "Enter Your Initials:";
     quizAnswerBox.appendChild(captureInitialsLabel);
     var captureInitalsBox = document.createElement("input");
     captureInitalsBox.setAttribute("type", "text");
     quizAnswerBox.appendChild(captureInitalsBox);
     var submitInitialsBtn = document.createElement("button");
-    submitInitialsBtn.setAttribute("type", "Submit");
-    captureInitalsBox.appendChild(submitInitialsBtn);
+    submitInitialsBtn.innerHTML = "Submit";
+    quizAnswerBox.appendChild(submitInitialsBtn);
 
     /* Store Initials and Score to Local Storage */
-    localStorage.setItem("High Score", JSON.stringify(todos));
+    //localStorage.setItem("High Score", JSON.stringify(todos));
 }
 
 function startTimer() {

@@ -1,9 +1,3 @@
-.answerGroup {
-    width: 440px;
-    height: 150px;
-    border-width: 5px;
-}
-
 .hide {
     display: none;
 }
@@ -12,23 +6,6 @@
     display: inline-block;
 }
 
-#playQuiz {
-    margin-top: 75px;
-    height: 200px;
-   width: -webkit-fill-available; 
-}
-
-#questionBox {
-    display: none;
-    margin-top: 75px;
-    height: 200px;
-}
-
-#title {
-    font-size: 50px;
-    font-weight: bold;
-    margin-top: 5%;
-}
 
 @media only screen and (max-width: 768px) {
     .answerGroup {

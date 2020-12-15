@@ -80,7 +80,10 @@ function displayQuestion() {
 }
 
 function endGame() {
-    console.log("game over");
+    /* Clear questions and answers from screen */
+    quizQuestionBox.textContent = "";
+    quizAnswerBox.textContent = "";
+    
 }
 
 /* Register Event Listeners */

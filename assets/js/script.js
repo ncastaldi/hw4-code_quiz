@@ -1,5 +1,6 @@
 /* Declare DOM Variables */
 var timerBox = document.getElementById("gameTimer");
+var title = document.getElementById("title");
 var welcomeMsg = document.getElementById("welcomeMsg");
 var playQuizBtn = document.getElementById("playQuiz");
 var quizQuestionBox = document.getElementById("quizQuestions")
@@ -102,13 +103,16 @@ function endGame() {
     /* End timer */
     clearInterval(interval);
 
+    /* Hide title */
+    title.setAttribute("class", "hide");
+
     /* Clear questions and answers from screen */
     quizQuestionBox.textContent = "";
     quizAnswerBox.textContent = "";
     quizMsgBox.textContent = "";
 
     /* Show Game Over Message */
-    welcomeMsg.textContent = "Game Over"
+    welcomeMsg.textContent = "Game Over";
     welcomeMsg.setAttribute("text-align", "center");
     welcomeMsg.setAttribute("class", "show");
 }

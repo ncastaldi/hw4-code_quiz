@@ -7,12 +7,15 @@ var playQuizBtn = document.getElementById("playQuiz");
 var quizQuestionBox = document.getElementById("quizQuestions")
 var quizAnswerBox = document.getElementById("quizAnswers");
 var quizMsgBox = document.getElementById("quizMessages");
+var submitInitialsBtn = document.createElement("button");
+var captureInitalsBox = document.createElement("input");
 
 /* Declare Javascript Variables */
 var questionIndex = 0;
 var totalSeconds = 60;
 var secondsElapsed = 0;
 var interval;
+var finalScore;
 
 const quizData = [
     {
@@ -27,17 +30,17 @@ const quizData = [
     },
     {
         question: "Arrays in JavaScript can be used to store:---",
-        choices: ["numbers and strings", "others Arrays", "booleances", "all of the above"],
-        answer: "all of the above"
+        choices: ["Numbers and Strings", "Others Arrays", "Booleans", "All of the Above"],
+        answer: "All of the Above"
     },
     {
         question: "String values must be enclosed within --- when being assigned to variables ",
-        choices: ["commas", "curly brackets", "quotes", "parentheses"],
-        answer: "quotes"
+        choices: ["Commas", "Curly Brackets", "Quotes", "Parentheses"],
+        answer: "Quotes"
     },
     {
         question: "A very useful tool used during development and debugging for printing content to the debugger is:---",
-        choices: ["JavaScript", "terminal/bash", "alerts", "console.log"],
+        choices: ["JavaScript", "Bash", "Alerts", "console.log"],
         answer: "console.log"
     },
 ]
@@ -118,7 +121,7 @@ function endGame() {
     welcomeMsg.setAttribute("class", "show");
 
     /* Display Final Score */
-    var finalScore = parseInt(totalSeconds - secondsElapsed);
+    finalScore = parseInt(totalSeconds - secondsElapsed);
     var finalScoreDisplay = document.createElement("p");
     finalScoreDisplay.innerHTML = "You scored: " + finalScore;
     quizAnswerBox.appendChild(finalScoreDisplay);
@@ -127,15 +130,16 @@ function endGame() {
     var captureInitialsLabel = document.createElement("p");
     captureInitialsLabel.innerHTML = "Enter Your Initials:";
     quizAnswerBox.appendChild(captureInitialsLabel);
-    var captureInitalsBox = document.createElement("input");
+    captureInitalsBox = document.createElement("input");
     captureInitalsBox.setAttribute("type", "text");
     quizAnswerBox.appendChild(captureInitalsBox);
-    var submitInitialsBtn = document.createElement("button");
+    submitInitialsBtn = document.createElement("button");
+    submitInitialsBtn.setAttribute("type", "submit");
     submitInitialsBtn.innerHTML = "Submit";
     quizAnswerBox.appendChild(submitInitialsBtn);
 
-    /* Store Initials and Score to Local Storage */
-    //localStorage.setItem("High Score", JSON.stringify(todos));
+    /* Display High Scores */
+    showHighScores();
 }
 
 function startTimer() {
@@ -150,13 +154,22 @@ function startTimer() {
 }
 
 function showHighScores() {
+    /* Store Initials and Score to Local Storage */
+    var scoreObj = {
+        initials: captureInitalsBox.value,
+        score: finalScore
+    }
+    localStorage.setItem("High Score", JSON.stringify(scoreObj));
+
     //Hide everything on the page
+    //Replace "Display High Scores" with "Take Quiz" and revert to homepage?
     //Pull scores from local storage
     //Create heading: HIGH SCORES
-    //Create UL of scores
+    //Create UL and LIs to show scores
     alert("Feature In Development");
 }
 
 /* Register Event Listeners */
 playQuizBtn.addEventListener("click", playQuiz);
 highScoreBox.addEventListener("click", showHighScores);
+submitInitialsBtn.addEventListener("click", showHighScores);

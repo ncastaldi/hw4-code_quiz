@@ -9,12 +9,18 @@ Live Site: [https://www.castaldi.dev/hw4-code_quiz/index.html](https://www.casta
 
 ## Table of Contents
 
+* [Known Issues](#knownissues)
 * [Installation](#installation)
 * [Usage](#usage)
 * [Credits](#credits)
 * [License](#license)
 * [Badges](#badges)
 * [Features](#features)
+
+
+## Known Issues
+
+**High Scores** -- Currently there is an issue capturing multiple high scores. A user's current score is stored in local storage, but only one at a time.
 
 
 ## Installation

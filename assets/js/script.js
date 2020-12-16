@@ -151,15 +151,7 @@ function startTimer() {
 
 function showHighScores() {
     /* Store Initials and Score to Local Storage */
-
     localStorage.setItem("High Score", JSON.stringify(scoreObj));
-
-    //Hide everything on the page
-    //Replace "Display High Scores" with "Take Quiz" and revert to homepage?
-    //Pull scores from local storage
-    //Create heading: HIGH SCORES
-    //Create UL and LIs to show scores
-    //alert("Feature In Development");
 }
 
 /* Register Event Listeners */

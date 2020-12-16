@@ -16,6 +16,10 @@ var totalSeconds = 60;
 var secondsElapsed = 0;
 var interval;
 var finalScore;
+var scoreObj = {
+    initials: "",
+    score: finalScore
+}
 
 const quizData = [
     {
@@ -126,17 +130,9 @@ function endGame() {
     finalScoreDisplay.innerHTML = "You scored: " + finalScore;
     quizAnswerBox.appendChild(finalScoreDisplay);
 
-    /* Capture User's Initals */
-    var captureInitialsLabel = document.createElement("p");
-    captureInitialsLabel.innerHTML = "Enter Your Initials:";
-    quizAnswerBox.appendChild(captureInitialsLabel);
-    captureInitalsBox = document.createElement("input");
-    captureInitalsBox.setAttribute("type", "text");
-    quizAnswerBox.appendChild(captureInitalsBox);
-    submitInitialsBtn = document.createElement("button");
-    submitInitialsBtn.setAttribute("type", "submit");
-    submitInitialsBtn.innerHTML = "Submit";
-    quizAnswerBox.appendChild(submitInitialsBtn);
+    /* Capture User's Initals and Score*/
+    scoreObj.initials = prompt("Congratulations!\nYou scored " + finalScore + "\nEnter your initals: ");
+    scoreObj.score = finalScore;
 
     /* Display High Scores */
     showHighScores();
@@ -155,10 +151,7 @@ function startTimer() {
 
 function showHighScores() {
     /* Store Initials and Score to Local Storage */
-    var scoreObj = {
-        initials: captureInitalsBox.value,
-        score: finalScore
-    }
+
     localStorage.setItem("High Score", JSON.stringify(scoreObj));
 
     //Hide everything on the page
@@ -166,10 +159,9 @@ function showHighScores() {
     //Pull scores from local storage
     //Create heading: HIGH SCORES
     //Create UL and LIs to show scores
-    alert("Feature In Development");
+    //alert("Feature In Development");
 }
 
 /* Register Event Listeners */
 playQuizBtn.addEventListener("click", playQuiz);
 highScoreBox.addEventListener("click", showHighScores);
-submitInitialsBtn.addEventListener("click", showHighScores);
